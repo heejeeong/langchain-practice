@@ -1,0 +1,36 @@
+# Python 가상환경
+.venv/
+.venv3/
+venv/
+env/
+
+# Python 캐시
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# 환경 변수
+.env
+.env.local
+
+# FAISS 인덱스 (용량 큼, 로컬에서 생성 가능)
+faiss_index*/
+*.faiss
+*.pkl
+
+# 데이터 파일 (필요시 data/ 자체를 제외할 수도 있음)
+# data/
+
+# IDE 설정
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+
+# Jupyter
+.ipynb_checkpoints/
+
+# 로그
+*.log
