@@ -1,0 +1,14 @@
+# LangChain + LCEL + LangSmith 실습
+langchain>=0.3.0
+langchain-openai>=0.2.0
+langchain-core>=0.3.0
+langsmith>=0.2.0
+python-dotenv>=1.0.0
+
+# 문서 로드 및 임베딩 실습 (PDF, FAISS, HuggingFace)
+langchain-community>=0.3.0
+langchain-text-splitters>=0.3.0
+pypdf>=5.0.0
+pymupdf>=1.24.0
+faiss-cpu>=1.9.0
+sentence-transformers>=3.0.0
