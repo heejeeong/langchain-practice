@@ -1,0 +1,18 @@
+services:
+  rag:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: langchain-practice:latest
+    container_name: langchain-practice-rag
+    env_file:
+      - .env
+    environment:
+      # Override at runtime: APP_ARGS="--query 질문"
+      APP_ARGS: ""
+    command: ["sh", "-c", "python practice.py $${APP_ARGS}"]
+    volumes:
+      - ./data:/app/data
+      - ./faiss_index_travel_guide:/app/faiss_index_travel_guide
+    stdin_open: true
+    tty: true
