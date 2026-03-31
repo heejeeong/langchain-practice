@@ -26,7 +26,7 @@ pipeline {
         stage('Docker Build') {
             steps {
                 // Docker 이미지 빌드 (이미지 이름: langchain-practice, 태그: latest)
-                sh 'docker build -t amdp-registry.skala-ai.com/skala3-ai2/langchain-practice:latest .'
+                sh 'docker build -t amdp-registry.skala-ai.com/skala26a-ai2/langchain-practice:latest .'
             }
         }
 
@@ -35,7 +35,7 @@ pipeline {
                 // Jenkins Credential에 등록된 harbor-cred 사용
                 withCredentials([usernamePassword(credentialsId: 'harbor-cred', usernameVariable: 'HARBOR_USER', passwordVariable: 'HARBOR_PASS')]) {
                     sh 'docker login amdp-registry.skala-ai.com -u $HARBOR_USER -p $HARBOR_PASS'
-                    sh 'docker push amdp-registry.skala-ai.com/skala3-ai2/langchain-practice:latest'
+                    sh 'docker push amdp-registry.skala-ai.com/skala26a-ai2/langchain-practice:latest'
                 }
             }
         }
