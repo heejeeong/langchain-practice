@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: langchain-practice
+  labels:
+    app: langchain-practice
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: langchain-practice
+  template:
+    metadata:
+      labels:
+        app: langchain-practice
+    spec:
+      containers:
+      - name: langchain-practice
+        image: amdp-registry.skala-ai.com/skala26a-ai2/langchain-practice:test-run
+        imagePullPolicy: Always
+        command: ["python", "-m", "http.server", "8000"]
+        ports:
+        - containerPort: 8000

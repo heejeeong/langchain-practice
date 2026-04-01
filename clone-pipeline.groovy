@@ -26,6 +26,7 @@ pipeline {
     }
 
     stages {
+
         stage('Checkout') {
             steps {
                 git branch: "${GIT_BRANCH}",
@@ -56,6 +57,13 @@ pipeline {
                 sh '''
                     echo "Build application for ${APP_NAME}"
                     python --version
+
+                    # Gradle 예시
+                    # chmod +x gradlew
+                    # ./gradlew clean build -x test
+
+                    # Maven 예시
+                    # mvn clean package -DskipTests
                 '''
             }
         }

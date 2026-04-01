@@ -1,0 +1,12 @@
+.git
+.gitignore
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.ipynb
+.DS_Store
+.env
+faiss_index/
+faiss_index_sample1/
+faiss_index_travel/
