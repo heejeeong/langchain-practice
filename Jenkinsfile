@@ -111,7 +111,11 @@ pipeline {
                 }
             }
         }
-
+        stage('Docker Build') {
+            steps {
+                sh "docker build --platform linux/amd64 -t ${FULL_IMAGE} ."
+            }
+        }
         stage('Deploy to EKS') {
             steps {
                 withCredentials([usernamePassword(
