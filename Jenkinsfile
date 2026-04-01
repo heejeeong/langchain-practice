@@ -66,9 +66,9 @@ pipeline {
 
         stage('Docker Build') {
             steps {
-                sh '''
-                    "docker build --platform linux/amd64 -t ${FULL_IMAGE} ."
-                '''
+                sh """
+                    docker build --platform linux/amd64 -t ${FULL_IMAGE} .
+                """
             }
         }
 
