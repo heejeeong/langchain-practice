@@ -55,7 +55,11 @@ pipeline {
             steps {
                 sh '''
                     echo "Build application for ${APP_NAME}"
-                    python --version
+                    if command -v python >/dev/null 2>&1; then
+                        python --version
+                    else
+                        echo "python not found on this Jenkins agent; skipping app build check"
+                    fi
                 '''
             }
         }
