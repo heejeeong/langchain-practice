@@ -6,7 +6,7 @@ on:
       - main
 
 env:
-  APP_NAME: sample-app
+  APP_NAME: langchain-practice
 
 jobs:
   build-and-deploy:
